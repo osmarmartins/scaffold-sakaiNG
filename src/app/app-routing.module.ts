@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EmptyComponent } from './components/empty/empty.component';
 import { AppMainComponent } from './app.main.component';
-import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
@@ -18,7 +17,6 @@ import { AccessComponent } from './components/access/access.component';
                     {path: 'pages/empty', component: EmptyComponent},
                 ],
             },
-            {path:'pages/landing', component: LandingComponent},
             {path:'pages/login', component: LoginComponent},
             {path:'pages/error', component: ErrorComponent},
             {path:'pages/notfound', component: NotfoundComponent},
