@@ -99,12 +99,12 @@ import { AppMenuitemComponent } from './app.menuitem.component';
 import { ConfigService } from 'src/app/core/service/app.config.service';
 import { MenuService } from './core/service/app.menu.service';
 
-import { AccessComponent } from './pages/access/access.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EmptyComponent } from './pages/empty/empty.component';
-import { ErrorComponent } from './pages/error/error.component';
-import { LoginComponent } from './pages/login/login.component';
-import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { LoginComponent } from './security/login/login.component';
+import { ErrorComponent } from './pages/erros/error/error.component';
+import { NotfoundComponent } from './pages/erros/notfound/notfound.component';
+import { AccessComponent } from './pages/erros/access/access.component';
 
 @NgModule({
     imports: [

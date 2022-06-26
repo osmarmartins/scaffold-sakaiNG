@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-// import { Product } from '../../api/product';
 import { Subscription } from 'rxjs';
 import { ConfigService } from 'src/app/core/service/app.config.service';
 import { AppConfig } from '../../core/models/appconfig';

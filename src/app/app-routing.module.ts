@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { AppMainComponent } from './app.main.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EmptyComponent } from './pages/empty/empty.component';
-import { AccessComponent } from './pages/access/access.component';
-import { ErrorComponent } from './pages/error/error.component';
-import { LoginComponent } from './pages/login/login.component';
-import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { LoginComponent } from './security/login/login.component';
+import { ErrorComponent } from './pages/erros/error/error.component';
+import { AccessComponent } from './pages/erros/access/access.component';
+import { NotfoundComponent } from './pages/erros/notfound/notfound.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -17,7 +17,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
                     {path: 'pages/empty', component: EmptyComponent},
                 ],
             },
-            {path:'pages/login', component: LoginComponent},
+            {path:'login', component: LoginComponent},
             {path:'pages/error', component: ErrorComponent},
             {path:'pages/notfound', component: NotfoundComponent},
             {path:'pages/access', component: AccessComponent},

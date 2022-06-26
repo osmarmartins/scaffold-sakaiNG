@@ -2,27 +2,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppConfig } from '../../core/models/appconfig';
 import { Subscription } from 'rxjs';
 import { ConfigService } from 'src/app/core/service/app.config.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles:[`
-    :host ::ng-deep .p-password input {
-    width: 100%;
-    padding:1rem;
-    }
-
-    :host ::ng-deep .pi-eye{
-      transform:scale(1.6);
-      margin-right: 1rem;
-      color: var(--primary-color) !important;
-    }
-
-    :host ::ng-deep .pi-eye-slash{
-      transform:scale(1.6);
-      margin-right: 1rem;
-      color: var(--primary-color) !important;
-    }
-  `]
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
