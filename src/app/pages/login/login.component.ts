@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ConfigService } from '../../service/app.config.service';
-import { AppConfig } from '../../api/appconfig';
+import { AppConfig } from '../../core/models/appconfig';
 import { Subscription } from 'rxjs';
+import { ConfigService } from 'src/app/core/service/app.config.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,9 +29,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   valCheck: string[] = ['remember'];
 
   password: string;
-  
+
   config: AppConfig;
-  
+
   subscription: Subscription;
 
   constructor(public configService: ConfigService){ }

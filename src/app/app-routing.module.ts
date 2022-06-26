@@ -1,12 +1,12 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { EmptyComponent } from './components/empty/empty.component';
 import { AppMainComponent } from './app.main.component';
-import { LoginComponent } from './components/login/login.component';
-import { ErrorComponent } from './components/error/error.component';
-import { NotfoundComponent } from './components/notfound/notfound.component';
-import { AccessComponent } from './components/access/access.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EmptyComponent } from './pages/empty/empty.component';
+import { AccessComponent } from './pages/access/access.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { LoginComponent } from './pages/login/login.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([

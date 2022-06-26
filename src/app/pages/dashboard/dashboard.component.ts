@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Product } from '../../api/product';
+// import { Product } from '../../api/product';
 import { Subscription } from 'rxjs';
-import { ConfigService } from '../../service/app.config.service';
-import { AppConfig } from '../../api/appconfig';
+import { ConfigService } from 'src/app/core/service/app.config.service';
+import { AppConfig } from '../../core/models/appconfig';
 
 @Component({
     templateUrl: './dashboard.component.html',
@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
     items: MenuItem[];
 
-    products: Product[];
+    products: any[];
 
     chartData: any;
 
