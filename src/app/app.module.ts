@@ -99,15 +99,9 @@ import { AppMenuitemComponent } from './app.menuitem.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EmptyComponent } from './components/empty/empty.component';
 
-import { CountryService } from './service/countryservice';
-import { CustomerService } from './service/customerservice';
-import { EventService } from './service/eventservice';
-import { IconService } from './service/iconservice';
-import { NodeService } from './service/nodeservice';
-import { PhotoService } from './service/photoservice';
-import { ProductService } from './service/productservice';
 import { MenuService } from './service/app.menu.service';
 import { ConfigService } from './service/app.config.service';
+
 import { LoginComponent } from './components/login/login.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
@@ -219,8 +213,7 @@ import { AccessComponent } from './components/access/access.component';
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, ConfigService
+        MenuService, ConfigService
     ],
     bootstrap: [AppComponent]
 })
