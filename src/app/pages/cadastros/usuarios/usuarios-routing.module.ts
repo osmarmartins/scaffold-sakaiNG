@@ -6,19 +6,19 @@ import { UsuarioListaComponent } from './usuario-lista/usuario-lista.component';
 
 const routes: Routes = [
     {
-        path: 'usuarios',
+        path: 'lista',
         component: UsuarioListaComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_USUARIOS'] },
     },
     {
-        path: 'usuario',
+        path: '',
         component: UsuarioFormComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_USUARIOS'] },
     },
     {
-        path: 'usuario/:id',
+        path: ':id',
         component: UsuarioFormComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_USUARIOS'] },

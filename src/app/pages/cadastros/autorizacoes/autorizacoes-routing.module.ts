@@ -5,19 +5,19 @@ import { AutorizacaoListaComponent } from './autorizacao-lista/autorizacao-lista
 
 const routes: Routes = [
     {
-        path: 'autorizacoes',
+        path: 'lista',
         component: AutorizacaoListaComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_AUTORIZACOES'] },
     },
     {
-        path: 'autorizacao',
+        path: '',
         component: AutorizacaoFormComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_AUTORIZACOES'] },
     },
     {
-        path: 'autorizacao/:id',
+        path: ':id',
         component: AutorizacaoFormComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_AUTORIZACOES'] },

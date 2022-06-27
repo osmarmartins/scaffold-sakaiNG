@@ -5,19 +5,19 @@ import { PerfilListaComponent } from './perfil-lista/perfil-lista.component';
 
 const routes: Routes = [
     {
-        path: 'perfis',
+        path: 'lista',
         component: PerfilListaComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_PERFIS'] },
     },
     {
-        path: 'perfil',
+        path: '',
         component: PerfilFormComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_PERFIS'] },
     },
     {
-        path: 'perfil/:id',
+        path: ':id',
         component: PerfilFormComponent,
         //   canActivate: [AuthGuard],
         //   data: { roles: ['ROLE_CADASTRO_PERFIS'] },
