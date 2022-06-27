@@ -31,6 +31,14 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
+                label: 'Cadastros',
+                items: [
+                    {label: 'Autorizações', icon: 'pi pi-fw pi-check-circle', routerLink: ['cadastros/autorizacoes']},
+                    {label: 'Perfis', icon: 'pi pi-fw pi-users', routerLink: ['cadastros/perfis']},
+                    {label: 'Usuários', icon: 'pi pi-fw pi-user', routerLink: ['cadastros/usuarios']},
+                ]
+            },
+            {
                 label: 'Pages',
                 items: [
                     {label: 'Login', icon: 'pi pi-fw pi-sign-in', routerLink: ['login']},

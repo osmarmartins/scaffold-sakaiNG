@@ -17,6 +17,10 @@ import { NotfoundComponent } from './pages/erros/notfound/notfound.component';
                     {path: 'empty', component: EmptyComponent},
                 ],
             },
+            {
+              path: 'cadastros',
+              loadChildren: () => import('./pages/cadastros/cadastros.module').then((m) => m.CadastrosModule),
+            },
             {path:'login', component: LoginComponent},
             {path:'error', component: ErrorComponent},
             {path:'notfound', component: NotfoundComponent},
