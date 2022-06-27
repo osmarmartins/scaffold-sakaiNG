@@ -13,16 +13,17 @@ import { NotfoundComponent } from './pages/erros/notfound/notfound.component';
             {
                 path: '', component: AppMainComponent,
                 children: [
-                    {path: '', component: DashboardComponent},
-                    {path: 'pages/empty', component: EmptyComponent},
+                    {path: 'dashboard', component: DashboardComponent},
+                    {path: 'empty', component: EmptyComponent},
                 ],
             },
             {path:'login', component: LoginComponent},
-            {path:'pages/error', component: ErrorComponent},
-            {path:'pages/notfound', component: NotfoundComponent},
-            {path:'pages/access', component: AccessComponent},
-            {path: '**', redirectTo: 'pages/notfound'},
-        ], {scrollPositionRestoration: 'enabled', anchorScrolling:'enabled'})
+            {path:'error', component: ErrorComponent},
+            {path:'notfound', component: NotfoundComponent},
+            {path:'access', component: AccessComponent},
+            {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+            {path: '**', redirectTo: 'notfound'},
+        ], {scrollPositionRestoration: 'enabled', anchorScrolling:'enabled', useHash: true })
     ],
     exports: [RouterModule]
 })
