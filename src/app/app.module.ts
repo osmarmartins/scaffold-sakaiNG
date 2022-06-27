@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { StyleClassModule } from 'primeng/styleclass';
@@ -105,6 +106,10 @@ import { LoginComponent } from './security/login/login.component';
 import { ErrorComponent } from './pages/erros/error/error.component';
 import { NotfoundComponent } from './pages/erros/notfound/notfound.component';
 import { AccessComponent } from './pages/erros/access/access.component';
+import { SharedModule } from './shared/shared.module';
+import { SecurityModule } from './security/security.module';
+import { AuthInterceptor } from './security/auth.interceptor';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
     imports: [
@@ -194,6 +199,9 @@ import { AccessComponent } from './pages/erros/access/access.component';
         TreeTableModule,
         VirtualScrollerModule,
         StyleClassModule,
+
+        SharedModule,
+        SecurityModule,
     ],
     declarations: [
         AppComponent,
@@ -212,6 +220,11 @@ import { AccessComponent } from './pages/erros/access/access.component';
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
+        { provide: LOCALE_ID, useValue: 'pt' },
+        { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true, },
+        { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+        JwtHelperService,
         MenuService, ConfigService
     ],
     bootstrap: [AppComponent]
