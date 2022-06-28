@@ -12,7 +12,7 @@ import { ConfigService } from 'src/app/core/service/app.config.service';
 })
 export class AppConfigComponent implements OnInit, OnDestroy {
 
-    scale: number = 14;
+    scale = 14;
 
     scales: any[] = [12, 13, 14, 15, 16];
 
@@ -31,6 +31,7 @@ export class AppConfigComponent implements OnInit, OnDestroy {
             this.applyScale();
         });
     }
+
 
     onConfigButtonClick(event) {
         this.appMain.configActive = !this.appMain.configActive;
@@ -61,8 +62,8 @@ export class AppConfigComponent implements OnInit, OnDestroy {
         this.configService.updateConfig(this.config);
     }
 
-    changeTheme(theme:string, dark:boolean){
-        let themeElement = document.getElementById('theme-css');
+    changeTheme(theme: string, dark: boolean){
+        const themeElement = document.getElementById('theme-css');
         themeElement.setAttribute('href', 'assets/theme/' + theme + '/theme.css');
         this.configService.updateConfig({...this.config, ...{theme, dark}});
     }
