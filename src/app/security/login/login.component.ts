@@ -13,8 +13,6 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
   usuario = new Usuario();
-//   valCheck: string[] = ['remember'];
-//   password: string;
   config: AppConfig;
   subscription: Subscription;
 

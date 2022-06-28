@@ -87,9 +87,6 @@ export class AuthService {
     sessionStorage.removeItem('jwt');
     this.jwtPayload = null;
     this.jwt = null;
-
-    console.log('remover token');
-
   }
 
   isAccessTokenInvalido(): boolean {

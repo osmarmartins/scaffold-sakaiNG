@@ -92,12 +92,14 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { ConfigService } from 'src/app/core/service/app.config.service';
 import { AuthInterceptor } from '../security/auth.interceptor';
 import { MenuService } from '../core/service/app.menu.service';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     FormsModule,
+    NgxUiLoaderModule,
 
     AccordionModule,
     AutoCompleteModule,
@@ -183,6 +185,7 @@ import { MenuService } from '../core/service/app.menu.service';
   ],
   exports: [
     FormsModule,
+    NgxUiLoaderModule,
 
     AccordionModule,
     AutoCompleteModule,
