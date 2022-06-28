@@ -12,10 +12,10 @@ import { AuthGuard } from './security/auth.guard';
     imports: [
         RouterModule.forRoot([
             {
-                path: '', component: AppMainComponent,
+                path: '', component: AppMainComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_DASHBOARD'] },
                 children: [
                     {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_DASHBOARD'] } },
-                    {path: 'empty', component: EmptyComponent},
+                    {path: 'empty', component: EmptyComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_DASHBOARD'] } },
                 ],
             },
             {

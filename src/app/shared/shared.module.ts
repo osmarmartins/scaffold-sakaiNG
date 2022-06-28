@@ -1,7 +1,9 @@
-import { DEFAULT_CURRENCY_CODE, LOCALE_ID,NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy, CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 // PrimeNG
 import { StyleClassModule } from 'primeng/styleclass';
@@ -87,12 +89,22 @@ import { TreeTableModule } from 'primeng/treetable';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
-import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
-
+// APP Service
 import { ConfigService } from 'src/app/core/service/app.config.service';
-import { AuthInterceptor } from '../security/auth.interceptor';
 import { MenuService } from '../core/service/app.menu.service';
+import { AuthInterceptor } from '../security/auth.interceptor';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { CurrencyMaskModule, CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+    align: 'left',
+    allowNegative: false,
+    decimal: ',',
+    precision: 2,
+    prefix: 'R$ ',
+    suffix: '',
+    thousands: '.',
+  };
 
 @NgModule({
   declarations: [],
@@ -100,6 +112,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     CommonModule,
     FormsModule,
     NgxUiLoaderModule,
+    CurrencyMaskModule,
 
     AccordionModule,
     AutoCompleteModule,
@@ -186,6 +199,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
   exports: [
     FormsModule,
     NgxUiLoaderModule,
+    CurrencyMaskModule,
 
     AccordionModule,
     AutoCompleteModule,
@@ -270,15 +284,14 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     StyleClassModule,
   ],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
-    { provide: LOCALE_ID, useValue: 'pt' },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true, },
-    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    JwtHelperService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }, JwtHelperService,
+    MessageService, ConfirmationService,
     MenuService, ConfigService,
-    MessageService,
-    ConfirmationService,
 ],
 })
 export class SharedModule { }

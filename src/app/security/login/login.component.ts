@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppConfig } from '../../core/models/appconfig';
 import { ConfigService } from 'src/app/core/service/app.config.service';
@@ -11,7 +11,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
-
+  @ViewChild('inputUsuario') inputUsuario: ElementRef;
   usuario = new Usuario();
   config: AppConfig;
   subscription: Subscription;
@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.authService.limparAccessToken();
+    setTimeout(() => this.inputUsuario.nativeElement.focus());
   }
 
   onLogin() {
