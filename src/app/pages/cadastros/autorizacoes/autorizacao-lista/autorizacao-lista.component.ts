@@ -1,3 +1,4 @@
+import { filter } from 'rxjs/operators';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, LazyLoadEvent } from 'primeng/api';
@@ -46,6 +47,7 @@ export class AutorizacaoListaComponent {
 
     listar(): void {
         this.loading = true;
+        this.filtro.sort = 'descricao,asc';
         this.service.listar(this.filtro).subscribe(
             (data: ListagemPaginada<Autorizacao>) => {
                 this.itens = data.content;
@@ -72,7 +74,7 @@ export class AutorizacaoListaComponent {
 
     aoExcluir(item: Autorizacao): void {
         this.confirmationService.confirm({
-            message: `Confirma excluir o cliente: <br><br> ${item.descricao} ?`,
+            message: `Confirma exclusão do registro: <br><br> ${item.descricao} ?`,
             accept: () => this.excluir(item),
         });
     }
@@ -80,19 +82,10 @@ export class AutorizacaoListaComponent {
     excluir(item: Autorizacao): void {
         this.service.excluir(item).subscribe(
             () => {
-                this.itens = this.itens.filter((i) => i.id !== item.id);
-                this.item = new Autorizacao();
-                this.toast.success(
-                    'Operação realizada com sucesso!',
-                    `Cliente excluido: ${item.id} - ${item.descricao}`
-                );
+                this.toast.success('Operação realizada com sucesso!', `Cliente excluido: ${item.id} - ${item.descricao}`);
+                this.listar();
             },
-            (error) => {
-                this.toast.error(
-                    'Erro na operação!',
-                    'Não foi possível excluir o cliente'
-                );
-            }
+            () => this.toast.error('Erro na operação!', 'Não foi possível excluir o cliente')
         );
     }
 
