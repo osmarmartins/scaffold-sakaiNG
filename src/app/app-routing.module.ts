@@ -28,7 +28,7 @@ import { AuthGuard } from './security/auth.guard';
             {path: 'access', component: AccessComponent},
             {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
             {path: '**', redirectTo: 'notfound'},
-        ], {scrollPositionRestoration: 'enabled', anchorScrolling:'enabled', useHash: true })
+        ], {scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', useHash: true })
     ],
     exports: [RouterModule]
 })

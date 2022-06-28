@@ -9,6 +9,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { environment } from './../../environments/environment';
 import { Usuario } from '../core/models/usuario';
 import { AppToastService } from '../core/service/toast.service';
+import { AccessToken } from '../core/models/accesstoken';
 
 @Injectable({providedIn: 'root', })
 export class AuthService {
@@ -28,10 +29,10 @@ export class AuthService {
     this.loader.start();
     const body = `username=${usuario.login}&password=${usuario.senha}&grant_type=password`;
     this.http
-      .post<any>(this.oauthTokenUrl, body)
+      .post<AccessToken>(this.oauthTokenUrl, body)
       .pipe(take(1))
       .subscribe(
-        (response) => {
+        (response: AccessToken) => {
           this.armazenarToken(response.access_token, response);
           this.router.navigate(['/']);
           this.loader.stop();
