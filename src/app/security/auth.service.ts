@@ -7,8 +7,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 import { environment } from './../../environments/environment';
-import { AppToastService } from '../core/service/toast.service';
 import { Usuario } from '../core/models/usuario';
+import { AppToastService } from '../core/service/toast.service';
 
 @Injectable({providedIn: 'root', })
 export class AuthService {
@@ -84,7 +84,12 @@ export class AuthService {
 
   limparAccessToken() {
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('jwt');
     this.jwtPayload = null;
+    this.jwt = null;
+
+    console.log('remover token');
+
   }
 
   isAccessTokenInvalido(): boolean {

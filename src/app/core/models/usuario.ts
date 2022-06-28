@@ -1,10 +1,10 @@
 export class Usuario {
 
     idUsuario: number;
-    nome = 'Nome completo do usuário';
+    nome: string;
     email: string;
     login: string;
     senha: string;
-    perfil = 'perfil';
+    perfil: string;
     authorities: string[];
   }

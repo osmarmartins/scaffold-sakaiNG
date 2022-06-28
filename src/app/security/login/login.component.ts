@@ -1,24 +1,27 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AppConfig } from '../../core/models/appconfig';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AppConfig } from '../../core/models/appconfig';
 import { ConfigService } from 'src/app/core/service/app.config.service';
+import { Usuario } from 'src/app/core/models/usuario';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  valCheck: string[] = ['remember'];
-
-  password: string;
-
+  usuario = new Usuario();
+//   valCheck: string[] = ['remember'];
+//   password: string;
   config: AppConfig;
-
   subscription: Subscription;
 
-  constructor(public configService: ConfigService){ }
+  constructor(
+    public configService: ConfigService,
+    private authService: AuthService,
+  ){ }
 
   ngOnInit(): void {
     this.config = this.configService.config;
@@ -28,8 +31,16 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if(this.subscription){
+    if (this.subscription){
       this.subscription.unsubscribe();
     }
+  }
+
+  ngAfterViewInit(): void {
+    this.authService.limparAccessToken();
+  }
+
+  onLogin() {
+    this.authService.login(this.usuario);
   }
 }
