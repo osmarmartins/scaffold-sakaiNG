@@ -7,13 +7,14 @@ import { LoginComponent } from './security/login/login.component';
 import { ErrorComponent } from './pages/erros/error/error.component';
 import { AccessComponent } from './pages/erros/access/access.component';
 import { NotfoundComponent } from './pages/erros/notfound/notfound.component';
+import { AuthGuard } from './security/auth.guard';
 @NgModule({
     imports: [
         RouterModule.forRoot([
             {
                 path: '', component: AppMainComponent,
                 children: [
-                    {path: 'dashboard', component: DashboardComponent},
+                    {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_DASHBOARD'] } },
                     {path: 'empty', component: EmptyComponent},
                 ],
             },

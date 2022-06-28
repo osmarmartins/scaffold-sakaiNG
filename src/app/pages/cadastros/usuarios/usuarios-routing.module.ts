@@ -8,20 +8,20 @@ const routes: Routes = [
     {
         path: 'lista',
         component: UsuarioListaComponent,
-        //   canActivate: [AuthGuard],
-        //   data: { roles: ['ROLE_CADASTRO_USUARIOS'] },
+          canActivate: [AuthGuard],
+          data: { roles: ['ROLE_CADASTRO_USUARIOS'] },
     },
     {
         path: '',
         component: UsuarioFormComponent,
-        //   canActivate: [AuthGuard],
-        //   data: { roles: ['ROLE_CADASTRO_USUARIOS'] },
+          canActivate: [AuthGuard],
+          data: { roles: ['ROLE_CADASTRO_USUARIOS'] },
     },
     {
         path: ':id',
         component: UsuarioFormComponent,
-        //   canActivate: [AuthGuard],
-        //   data: { roles: ['ROLE_CADASTRO_USUARIOS'] },
+          canActivate: [AuthGuard],
+          data: { roles: ['ROLE_CADASTRO_USUARIOS'] },
     },
 ];
 
