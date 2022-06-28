@@ -3,7 +3,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { AppComponent } from './app.component';
 import { AppConfig } from './core/models/appconfig';
 import { Subscription } from 'rxjs';
-import { ConfigService } from './core/service/app.config.service';
+import { ConfigService } from './core/services/app.config.service';
 
 @Component({
     selector: 'app-main',
@@ -29,7 +29,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     public overlayMenuActive: boolean;
 
-    public staticMenuInactive: boolean = false;
+    public staticMenuInactive = false;
 
     public profileActive: boolean;
 

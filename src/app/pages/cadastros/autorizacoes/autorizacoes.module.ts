@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AutorizacoesRoutingModule } from './autorizacoes-routing.module';
 import { AutorizacaoFormComponent } from './autorizacao-form/autorizacao-form.component';
 import { AutorizacaoListaComponent } from './autorizacao-lista/autorizacao-lista.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { AutorizacaoListaComponent } from './autorizacao-lista/autorizacao-lista
   ],
   imports: [
     CommonModule,
-    AutorizacoesRoutingModule
+    AutorizacoesRoutingModule,
+    SharedModule,
+
   ]
 })
 export class AutorizacoesModule { }

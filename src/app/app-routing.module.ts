@@ -16,11 +16,11 @@ import { AuthGuard } from './security/auth.guard';
                 children: [
                     {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_DASHBOARD'] } },
                     {path: 'empty', component: EmptyComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_DASHBOARD'] } },
+                    {
+                      path: 'cadastros',
+                      loadChildren: () => import('./pages/cadastros/cadastros.module').then((m) => m.CadastrosModule),
+                    },
                 ],
-            },
-            {
-              path: 'cadastros',
-              loadChildren: () => import('./pages/cadastros/cadastros.module').then((m) => m.CadastrosModule),
             },
             {path: 'login', component: LoginComponent},
             {path: 'error', component: ErrorComponent},

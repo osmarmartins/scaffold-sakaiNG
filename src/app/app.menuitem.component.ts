@@ -4,7 +4,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AppMainComponent } from './app.main.component';
-import { MenuService } from './core/service/app.menu.service';
+import { MenuService } from './core/services/app.menu.service';
 
 @Component({
     /* tslint:disable:component-selector */

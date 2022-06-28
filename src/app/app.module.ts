@@ -30,6 +30,7 @@ import { SecurityModule } from './security/security.module';
 
         SharedModule,
         SecurityModule,
+
     ],
     declarations: [
         AppComponent,

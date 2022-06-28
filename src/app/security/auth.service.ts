@@ -8,7 +8,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 import { environment } from './../../environments/environment';
 import { Usuario } from '../core/models/usuario';
-import { AppToastService } from '../core/service/toast.service';
+import { AppToastService } from '../core/services/toast.service';
 import { AccessToken } from '../core/models/accesstoken';
 
 @Injectable({providedIn: 'root', })

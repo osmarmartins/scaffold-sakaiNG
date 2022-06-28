@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Subscription } from 'rxjs';
-import { ConfigService } from 'src/app/core/service/app.config.service';
+import { ConfigService } from 'src/app/core/services/app.config.service';
 import { AppConfig } from '../../core/models/appconfig';
 
 @Component({

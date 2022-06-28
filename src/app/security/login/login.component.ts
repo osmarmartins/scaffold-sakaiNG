@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppConfig } from '../../core/models/appconfig';
-import { ConfigService } from 'src/app/core/service/app.config.service';
+import { ConfigService } from 'src/app/core/services/app.config.service';
 import { Usuario } from 'src/app/core/models/usuario';
 import { AuthService } from '../auth.service';
 

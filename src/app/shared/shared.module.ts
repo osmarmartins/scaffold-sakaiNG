@@ -90,8 +90,8 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
 // APP Service
-import { ConfigService } from 'src/app/core/service/app.config.service';
-import { MenuService } from '../core/service/app.menu.service';
+import { ConfigService } from 'src/app/core/services/app.config.service';
+import { MenuService } from '../core/services/app.menu.service';
 import { AuthInterceptor } from '../security/auth.interceptor';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { CurrencyMaskModule, CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
