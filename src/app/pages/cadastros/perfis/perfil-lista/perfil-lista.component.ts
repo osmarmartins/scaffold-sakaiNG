@@ -83,10 +83,10 @@ export class PerfilListaComponent {
     excluir(item: Perfil): void {
         this.service.excluir(item).subscribe(
             () => {
-                this.toast.success('Operação realizada com sucesso!', `Cliente excluido: ${item.id} - ${item.descricao}`);
+                this.toast.success('Operação realizada com sucesso!', `Perfil excluido: ${item.id} - ${item.descricao}`);
                 this.listar();
             },
-            () => this.toast.error('Erro na operação!', 'Não foi possível excluir o cliente')
+            () => this.toast.error('Erro na operação!', 'Não foi possível excluir o perfil')
         );
     }
 

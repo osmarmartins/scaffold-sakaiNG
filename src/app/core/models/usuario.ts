@@ -1,9 +1,13 @@
+import { Perfil } from './perfil';
+
 export class Usuario {
-    idUsuario: number;
+    id: number;
     nome: string;
     email: string;
     login: string;
     senha: string;
-    perfil: string;
+    confirmarSenha: string;
     authorities: string[];
-  }
+    perfis: Perfil[];
+    ativo: string;
+}

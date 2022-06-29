@@ -75,10 +75,10 @@ export class AutorizacaoListaComponent {
     excluir(item: Autorizacao): void {
         this.service.excluir(item).subscribe(
             () => {
-                this.toast.success('Operação realizada com sucesso!', `Cliente excluido: ${item.id} - ${item.descricao}`);
+                this.toast.success('Operação realizada com sucesso!', `Autorização excluida: ${item.id} - ${item.descricao}`);
                 this.listar();
             },
-            () => this.toast.error('Erro na operação!', 'Não foi possível excluir o cliente')
+            () => this.toast.error('Erro na operação!', 'Não foi possível excluir a autorização')
         );
     }
 
