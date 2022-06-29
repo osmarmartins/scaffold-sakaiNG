@@ -45,7 +45,8 @@ export class PerfilListaComponent {
         this.listar();
     }
 
-    listar(): void {
+    listar(event: LazyLoadEvent = null): void {
+        this.filtro.onLazyLoad(event);
         this.loading = true;
         this.filtro.sort = 'descricao,asc';
         this.service.listar(this.filtro).subscribe(

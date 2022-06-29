@@ -9,7 +9,7 @@
 				[rows]="filtro.size"
 				[rowsPerPageOptions]="[5,20,100,500,1000]"
 				[lazy]="true"
-				(onLazyLoad)="aoCarregar($event)"
+				(onLazyLoad)="listar($event)"
 				[totalRecords]="totalRecords"
 				[loading]="loading"
 

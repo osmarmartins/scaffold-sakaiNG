@@ -1,4 +1,3 @@
-import { filter } from 'rxjs/operators';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, LazyLoadEvent } from 'primeng/api';
@@ -39,15 +38,9 @@ export class AutorizacaoListaComponent {
         this.router.navigate(['cadastros', 'autorizacoes', item.id]);
     }
 
-    aoCarregar(event: LazyLoadEvent = null) {
-        this.filtro.size = event?.rows;
-        this.filtro.page = Math.ceil(event?.first / event?.rows);
-        this.listar();
-    }
-
-    listar(): void {
+    listar(event: LazyLoadEvent = null): void {
+        this.filtro.onLazyLoad(event);
         this.loading = true;
-        this.filtro.sort = 'descricao,asc';
         this.service.listar(this.filtro).subscribe(
             (data: ListagemPaginada<Autorizacao>) => {
                 this.itens = data.content;

@@ -24,12 +24,11 @@ export abstract class GenericService<T> {
   }
 
   salvar(dados: T): Observable<T> {
-    const json = JSON.stringify(dados);
     const id = (dados as unknown as Entity).id;
     if (id == null) {
-      return this.http.post<T>(`${this.apiUrl}`, json).pipe(take(1));
+      return this.http.post<T>(`${this.apiUrl}`, dados).pipe(take(1));
     }
-    return this.http.put<T>(`${this.apiUrl}/${id}`, json).pipe(take(1));
+    return this.http.put<T>(`${this.apiUrl}/${id}`, dados).pipe(take(1));
   }
 
   excluir(dados: T): Observable<void> {
@@ -38,9 +37,5 @@ export abstract class GenericService<T> {
   }
 
   abstract getApiUrl(): string;
-
-  getHttpClient(): HttpClient {
-    return this.http;
-  }
 
 }
