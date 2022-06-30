@@ -8,6 +8,7 @@ import { ErrorComponent } from './pages/erros/error/error.component';
 import { AccessComponent } from './pages/erros/access/access.component';
 import { NotfoundComponent } from './pages/erros/notfound/notfound.component';
 import { AuthGuard } from './security/auth.guard';
+import { TrocarsenhaComponent } from './pages/trocarsenha/trocarsenha.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -16,6 +17,7 @@ import { AuthGuard } from './security/auth.guard';
                 children: [
                     {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_DASHBOARD'] } },
                     {path: 'empty', component: EmptyComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_DASHBOARD'] } },
+                    {path: 'trocarsenha', component: TrocarsenhaComponent},
                     {
                       path: 'cadastros',
                       loadChildren: () => import('./pages/cadastros/cadastros.module').then((m) => m.CadastrosModule),

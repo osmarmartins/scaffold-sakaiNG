@@ -11,18 +11,18 @@
                 <label for="id">ID</label>
                 <input type="text" pInputText id="id" name="id" [(ngModel)]="usuario.id" readonly/>
             </div>
-            <div class="field col-10">
+            <div class="field col-6">
                 <label for="descricao">Nome</label>
                 <input type="text" pInputText id="nome" name="nome" [(ngModel)]="usuario.nome" required #autofocus/>
             </div>
-        </div>
-
-        <div class="formgrid grid">
             <div class="field col-4">
                 <label for="usuario">Login</label>
                 <input type="text" pInputText id="usuario" name="usuario" [(ngModel)]="usuario.login" required/>
             </div>
-            <div class="field col-4">
+        </div>
+
+        <div class="formgrid grid" *ngIf="!usuario?.id">
+            <div class="field col-6">
                 <label for="senha">Senha</label>
                 <p-password id="senha" name="senha" placeholder="Sua senha"
                     [toggleMask]="true"
@@ -31,10 +31,10 @@
                     weakLabel="Fraco"
                     mediumLabel="Médio"
                     strongLabel="Forte"
-                    [(ngModel)]="usuario.senha">
+                    [(ngModel)]="usuario.novaSenha">
                 </p-password>
             </div>
-            <div class="field col-4">
+            <div class="field col-6">
                 <label for="confirmar-senha">Confirme a Senha</label>
                 <p-password id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha"
                     [toggleMask]="true"

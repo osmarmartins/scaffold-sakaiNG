@@ -20,6 +20,7 @@ import { NotfoundComponent } from './pages/erros/notfound/notfound.component';
 import { AccessComponent } from './pages/erros/access/access.component';
 import { SharedModule } from './shared/shared.module';
 import { SecurityModule } from './security/security.module';
+import { TrocarsenhaComponent } from './pages/trocarsenha/trocarsenha.component';
 
 @NgModule({
     imports: [
@@ -46,6 +47,7 @@ import { SecurityModule } from './security/security.module';
         ErrorComponent,
         NotfoundComponent,
         AccessComponent,
+        TrocarsenhaComponent,
     ],
     bootstrap: [AppComponent]
 })

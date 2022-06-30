@@ -7,6 +7,8 @@ export class Usuario {
     login: string;
     senha: string;
     confirmarSenha: string;
+    senhaAtual: string;
+    novaSenha: string;
     authorities: string[];
     perfis: Perfil[];
     ativo: string;
